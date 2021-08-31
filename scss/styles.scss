@@ -1,0 +1,52 @@
+@import "./variable_overrides"; 
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,700&display=swap');
+
+.header {
+  &__container {
+    flex-wrap: wrap;
+  }
+  &__logo {
+    height: 100px;
+  }
+  &__cart {
+    position: relative;
+    &--popup {
+      position: absolute;
+      padding-left: 5px;
+      top: -6px;
+      right: -11px;
+      background-color: #DF861D;
+      color: #fff;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+  }
+}
+.hide {
+  visibility: hidden;
+}
+.underlineLink {
+  text-decoration: underline;
+}
+
+.navbar-toggler-icon {
+  display: block;
+  height: 0.2em;
+}
+
+#nombre {
+ cursor: pointer;
+}
+
+.btn-info {
+  color: $white;
+}
+
+
+ 

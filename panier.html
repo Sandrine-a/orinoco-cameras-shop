@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="desription" content="Orinoco - Le meilleur pour vous procurer vos appareils photos">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <title>Orinoco - Panier </title>
+</head>
+<body>
+  <header class="container-fluid bg-primary">
+    <div class="container header">
+      <div class="row">
+        <div class="col-6 col-md-8">
+          <a href="./index.html">
+            <img src="images/logo_orinoco_full.png" alt="Logo boutique Orinoco" class="header__logo col-12 col-md-3"/>
+          </a>
+        </div>
+        <nav class="col-6 col-md-3 my-2 navbar">
+          <div class="row">
+            <ul class="navbar-nav col-12">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                  <span class="text-dark">Accueil</span>
+                </a>
+              </li>
+              <li class="header__cart nav-item">
+                <a href="panier.html" class="nav-link">
+                  <span class="text-dark">Mon panier</span>
+                  <i class="fas fa-shopping-cart fa-lg header__cart--icon text-dark"></i>
+                  <span class="hide header__cart--popup"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <section class="row">
+      <h1 class="text-center mt-3">Panier</h1>
+    </section>
+    <section class="row recap__panier mt-3">
+      <div class="card-body bg-primary mx-3 mb-2" id="panier__display">
+        <div id="panier__display__message" class="col-12 mt-1 text-info text-center hide">
+          <!--           Message affiché si le panier est vide, en visibility hidden si false -->
+          <p class="text-center text-dark h3 col-12">
+            Votre panier est vide: 
+            <a href="index.html" class="h4 text-info underlineLink"> Retourner à l'accueil</a>
+          </p>
+
+        </div>
+        <!--           affichage du contenu panier -->
+        <div id="panier__display--content">
+          <div class="row fw-bold mb-2 border-bottom border-dark border-3 h5" id="tab__header">
+            <div class="col-3">
+              <p>Nom</p>
+            </div>
+            <div class="col-3">
+              <p> Prix/Un. </p>
+            </div>
+            <div class="col-3">
+              <p> Quantité </p>
+            </div>
+            <div class="col-3">
+              <p> Modifier </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="row control__panier my-5 mx-2 border-bottom">
+      <div class="col-md-6 mb-2 text-center">
+        <h2>Prix total:</h2>
+        <p class="control__panier--total p-l-3 h3 text-center"></p>
+      </div>
+      <div class="col-md-6 text-center text-md-start mb-2">
+        <input type="button" class="text-center btn btn-primary btn-lg" id="order__btn" value="Tout supprimer">
+      </div>
+    </section>
+    <section class="form__section row mb-5 mx-2">
+      <h2 class="col-12"> Formulaire de commande</h2>
+      <fieldset class="border">
+        <legend>Merci de compléter le formulaire de commande.</legend>
+        <p>Tous les champs sont obligatoires</p>
+        <form id="needs-validation" novalidate>
+          <!-- method="POST" action="" -->
+          <div class="form-group">
+            <div class="col-md-4 mb-3">
+              <label for="firstName">Prénom</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Indiquer votre prénom" pattern="[a-zA-ZÀ-ÿ-'\s\b]{1,50}" required>
+              <div class="invalid-feedback">
+                Merci d'indiquer votre prénom
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="lastName">Nom</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Indiquer votre nom" pattern="[a-zA-ZÀ-ÿ-'\s\b]{1,50}" required>
+              <div class="invalid-feedback">
+                Merci d'indiquer votre prénom
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-6 mb-3">
+              <label for="adress">Adresse</label>
+              <input type="text" class="form-control" id="adress" placeholder="Indiquer le numéro et la rue" minlength="4" maxlength="150" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="city">Ville</label>
+              <input type="text" class="form-control" id="city" placeholder="Indiquer la ville" minlength="2" maxlength="100" required>
+              <div class="invalid-feedback">
+                Merci d'indiquer une ville valide
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="zip">Code postal</label>
+              <input type="text" pattern="[0-9]{5}" class="form-control" id="zip" placeholder="Indiquer le code postal" required>
+              <div class="invalid-feedback">
+                Merci d'indiquer un code postal sans espace.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-6 mb-3">
+              <label for="email">Adresse e-mail: </label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Indiquer votre mail" pattern="[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,8}" maxlength="100" required>
+              <small id="emailHelp" class="form-text text-muted">Mail au format ex: dupont@mail.fr</small>
+              <div class="invalid-feedback">
+                Merci d'indiquer un mail au format valide.
+              </div>
+            </div>
+          </div>
+          <div class="form-group my-2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                J'accepte les termes conditions.
+              </label>
+              <div class="invalid-feedback">
+                Validation obligatoire pour confirmer.
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary my-2" type="submit">Confirmation commande</button>
+        </form>
+      </fieldset>
+    </section>
+  </main>
+  <footer class="container-fluid bg-primary mt-5">
+    <div class="container pt-2 pb-5">
+      <div class="row">
+        <div class="col-md-4 mt-3">
+          <p class="h5 pl-2">A propros</p>
+          <ul class="list-unstyled">
+            <li class="my-2">
+              <a href="#" class="text-dark">Le groupe</a>
+            </li>
+            <li class="my-2">
+              <a href="#" class="text-dark">Nos partenaires</a>
+            </li>
+            <li class="my-2">
+              <a href="#" class="text-dark">Nous rejoindre</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 mt-3">
+          <p class="h5 pl-2">Nos services</p>
+          <ul class="list-unstyled">
+            <li class="my-2">
+              <a href="#" class="text-dark">SAV</a>
+            </li>
+            <li class="my-2">
+              <a href="#" class="text-dark">Q & A</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 mt-3">
+          <p class="h5 pl-2">Restez informés</p>
+          <ul class="list-unstyled">
+            <li class="my-2">
+              <a href="#" class="text-dark">Inscription</a>
+            </li>
+            <li class="my-2">
+              <a href="#" class="text-dark">Reseaux sociaux</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./js/app.js"></script>
+  <script src="./js/panier.js"></script>
+</body>
+</html>
