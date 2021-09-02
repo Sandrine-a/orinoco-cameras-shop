@@ -1,3 +1,6 @@
+/* //Import polyfill et sauvegarder puis passer en remarque pour eviter err
+import 'babel-polyfill'; */
+
 import { urlApi, onCartEdit } from './app';
 
 ///// -  - VARIABLES GLOBALES - - /////
