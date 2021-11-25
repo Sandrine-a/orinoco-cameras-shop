@@ -9,7 +9,9 @@
 - Créer un plan de test pour une application
 - Interagir avec un web service avec JavaScript
 
-*Architecture générale:*
+***Architecture générale:***
+
+*À partir d'un dossier back-end déjà en créé, effectuer le développement front-end*
 
 1. L’application web sera composée de 4 pages :
    - Une page de vue sous forme de liste, montrant tous les articles disponibles à la vente ;
